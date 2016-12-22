@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  root 'users#main'
+  get 'main/' => 'users#main'
+  resources :users
+  delete 'sessions/' => 'sessions#destroy'
+  get 'professional_profile/:id' => 'invitations#show'
+  post 'sessions/' => 'sessions#create'
+  post 'invitations/' => 'invitations#create'
+  patch 'invitations/:id' => 'invitations#update'
+  delete 'invitations/' => 'invitations#destroy'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
